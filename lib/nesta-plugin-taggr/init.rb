@@ -30,7 +30,7 @@ module Nesta
     end
 
     def self.pages_by_tag(tag)
-      Page.find_all.select { |page| page.tags.include?( tag ) } unless tag.nil? || tag.empty?
+      Page.find_all.select { |page| page.tags.include?( tag ) }.sort { |x, y| y.date <=> x.date } unless tag.nil? || tag.empty?
     end
 
     def tags
