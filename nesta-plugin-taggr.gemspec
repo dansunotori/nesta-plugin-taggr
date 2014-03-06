@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Alexander Golev"]
   s.email       = ["sasha.golev@gmail.com"]
+  s.licenses    = ['MIT']
   s.homepage    = "http://github.com/dansunotori/search-plugin-taggr"
   s.summary     = %q{Tag support plugin for Nesta CMS}
   s.description = %q{Adds support for 'tags' metadata.}
