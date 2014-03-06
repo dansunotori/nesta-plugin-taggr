@@ -9,7 +9,7 @@ Installation
 To install it as a gem add `nesta-plugin-taggr` to the `Gemfile` in your Nesta
 project, and then re-run `bundle`:
 
-    gem 'nesta-plugin-taggr', git: "git://github.com/dansunotori/nesta-plugin-taggr.git"
+    gem 'nesta-plugin-taggr'
 
 Usage examples
 --------------
