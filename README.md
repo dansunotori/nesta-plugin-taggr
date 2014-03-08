@@ -22,14 +22,14 @@ My page has tags!
 
 Tag cloud buttons with Bootstrap. `tag_cloud` returns an array of `[tag, global_count]` pairs sorted by tag alphabetically.
 
-    .panel
-      - min_weight = 0
+    .panel.center
+      - min_weight = @min_weight || 2
       - btn_class = [ 'btn-xs', 'btn-sm', '', 'btn-lg' ]
-      - cloud = tag_cloud.select { |k,v| v > min_weight }
-      - max_weight = cloud.max_by{|k,v| v}[1] - min_weight
+      - cloud = tag_cloud.select { |k,v| v >= min_weight }
+      - max_weight = cloud.max_by{ |k,v| v }[1] - min_weight
       - cloud.each do |key, value|
-        - weight = ((value * 1.0 / max_weight) * 4).ceil - 1
-        %a{ :class => "tagcloud btn btn-info #{btn_class[weight]}", href: "/tag?q=#{key}", role: 'button' }= key
+        - weight = (((value - min_weight) * 1.0 / max_weight) * 3).ceil
+        %a{ :class => "tagcloud btn btn-default #{btn_class[weight]}", href: "/tag?q=#{key}" }= key
 
 Similar articles are sorted by relevance in descending order; similarity is a number of common tags.
 
